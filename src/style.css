@@ -1,0 +1,55 @@
+:root {
+  --primary-color: purple;
+  --accent-color: blue;
+  --background-color: cadetblue;
+}
+
+* {
+  border: 1px solid red;
+}
+
+.wrapper {
+  margin-inline: 3%;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  justify-items: center;
+}
+
+main {
+  height: auto;
+}
+
+footer {
+  justify-items: center;
+  padding-block: 25px;
+}
+
+.hero-section {
+  block-size: 100svh;
+  padding-block-start: 75px;
+}
+
+.project-section {
+  display: grid;
+  align-items: center;
+  min-height: 75svh;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.projects article {
+}
