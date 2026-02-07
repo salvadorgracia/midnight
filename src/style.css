@@ -4,9 +4,9 @@
   --background-color: cadetblue;
 }
 
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 
 .wrapper {
   margin-inline: 3%;
@@ -20,21 +20,118 @@ body {
 header {
   position: fixed;
   width: 100%;
-  justify-items: center;
+
+}
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.primary-nav {
+  position: absolute;
+  background-color: var(--primary-color);
+  width: 100svw;
+  height: 100svh;
+  z-index: 700;
+  transform: scale(1, 0);
+  transition: transform 500ms ease-in-out;
+  transform-origin: top;
+}
+
+.primary-nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 3rem;
+  color: black;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.primary-nav a:hover {
+  color: var(--accent-color);
+}
+
+.primary-nav ul {
+  margin-inline-start: 50px;
+  margin-block: 0px;
+}
+
+.primary-nav li {
+  margin-block: 100px;
+  font-weight: bold;
+  font-size: 3rem;
+  
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle {
+  display: none;
+  z-index: 800;
+}
+
+.nav-toggle-label {
+  display: block;
+  position: absolute;
+  inset-inline-start: 20px;
+  inset-block-start: 20px;
+  padding-inline: 10px;
+  padding-block: 20px;
+  width: fit-content;
+  border: 2px solid black;
+  border-radius: 5px;
+  z-index: 900;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background-color: black;
+  height: 2px;
+  width: 32px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+  top: 8px;
+}
+
+.header-logo {
+  height: 75px;
+  width: 75px;
+  margin-block-start: 20px;
+  align-self: center;
+  background-color: azure;
 }
 
 main {
   height: auto;
 }
 
-footer {
-  justify-items: center;
-  padding-block: 25px;
-}
-
 .hero-section {
   block-size: 100svh;
-  padding-block-start: 75px;
+  padding-block-start: 100px;
 }
 
 .project-section {
@@ -52,4 +149,11 @@ footer {
 
 
 .projects article {
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 25px;
 }
