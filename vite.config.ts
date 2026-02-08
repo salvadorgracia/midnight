@@ -4,5 +4,8 @@ import { qrcode } from 'vite-plugin-qrcode'
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    open: 'firefox'
+  },
   plugins: [react(), qrcode()],
 })
